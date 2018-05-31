@@ -2,32 +2,17 @@ import "regenerator-runtime/runtime"
 import React from "react"
 import ReactDOM from "react-dom"
 import ReactPDF from "@react-pdf/node"
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/core"
+import { Document, Font } from "@react-pdf/core"
+import Page from "./components/pages/Info/Page"
 
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: "row",
-    backgroundColor: "#E4E4E4",
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
+Font.register(`${__dirname}/fonts/NotoSansCJKjp-Light.otf`, {
+  family: "NotoSansCJKjp",
 })
 
 // Create Document Component
 const MyDocument = () => (
   <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
+    <Page />
   </Document>
 )
 
