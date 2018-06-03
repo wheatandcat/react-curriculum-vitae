@@ -5,6 +5,8 @@ import Title from "../atoms/Title"
 import Link from "../atoms/Link"
 import Br from "../atoms/Br"
 import { Grid, Col } from "../atoms/Grid"
+import JonHistory from "../organisms/JonHistory/Board"
+import Period from "../molecules/JonHistory/Period"
 import secret from "../../secret.json"
 
 export default () => (
@@ -32,26 +34,19 @@ export default () => (
       </Grid>
       <Grid borderTop>
         <Col subTitle borderLeft borderRight>
-          <Text>現住所(都道府県)</Text>
-        </Col>
-        <Col size={2} borderRight>
-          <Text>東京</Text>
-        </Col>
-        <Col subTitle borderRight>
           <Text>年齢</Text>
         </Col>
         <Col size={2} borderRight>
           <Text>28</Text>
         </Col>
-      </Grid>
-      <Grid borderTop>
-        <Col subTitle borderLeft borderRight>
+        <Col subTitle borderRight>
           <Text>性別</Text>
         </Col>
-        <Col size={5.3} borderRight>
+        <Col size={2} borderRight>
           <Text>男</Text>
         </Col>
       </Grid>
+
       <Grid borderTop>
         <Col
           subTitle
@@ -121,59 +116,70 @@ export default () => (
       <Br />
       <Br />
       <Br />
-      <Grid borderTop borderBottom>
-        <Col
-          borderLeft
-          borderRight
-          style={{
-            backgroundColor: "#7fbfff",
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <Text>職務履歴</Text>
-        </Col>
-        <Col size={4.55} borderRight style={{ padding: 0 }}>
-          <Grid>
-            <Col subTitle borderRight>
-              <Text size="small">期間</Text>
-            </Col>
-            <Col subTitle borderRight>
-              <Text size="small">職業先</Text>
-            </Col>
-            <Col subTitle borderRight size={2}>
-              <Text size="small">業務内容</Text>
-            </Col>
-            <Col subTitle borderRight borderLeft>
-              <Text size="small">使用技術</Text>
-            </Col>
-            <Col subTitle>
-              <Text size="small">契約・雇用形態</Text>
-            </Col>
-          </Grid>
-          <Grid borderTop>
-            <Col borderRight>
-              <Text size="small">【年月】</Text>
-              <Text size="small"> 2017/12〜現在</Text>
-              <Text size="small">【期間】</Text>
-              <Text size="small"> 6ヶ月</Text>
-            </Col>
-            <Col borderRight>
-              <Text size="small">{secret.companyNames[0]}</Text>
-            </Col>
-            <Col borderRight size={2}>
-              <Text />
-            </Col>
-            <Col borderRight borderLeft>
-              <Text>使用技術</Text>
-            </Col>
-            <Col>
-              <Text>契約・雇用形態</Text>
-            </Col>
-          </Grid>
-        </Col>
-      </Grid>
+      <JonHistory
+        items={[
+          {
+            name: "期間",
+          },
+          {
+            name: "職業先",
+          },
+          {
+            name: "業務内容",
+            size: 3,
+          },
+          {
+            name: "使用技術",
+            borderLeft: true,
+          },
+          {
+            name: "契約・雇用形態",
+          },
+        ]}
+      >
+        <Grid borderTop>
+          <Col borderRight>
+            <Period date="2017/12〜現在" period="6ヶ月" />
+          </Col>
+          <Col borderRight>
+            <Text size="small">{secret.companyNames[0]}</Text>
+          </Col>
+          <Col borderRight size={3}>
+            <Text size="small" style={{ fontWeight: 1200 }}>
+              【業務内容】
+            </Text>
+            <View>
+              <Text size="small">・スマホアプリ / Webサービス開発</Text>
+            </View>
+            <Text size="small" style={{ fontWeight: 1200 }}>
+              【業務詳細】
+            </Text>
+            <View>
+              <Text size="small">・メイン作業はアプリ、Webのフロント実装</Text>
+              <Text size="small">
+                ・アプリの自動デプロイ実装（Fabric、fastlane）
+              </Text>
+              <Text size="small">・Firebase連携実装</Text>
+              <Text size="small">・GraphQLのサーバー、フロント実装</Text>
+              <Text size="small">・サブ作業でgolangのサーバー実装</Text>
+            </View>
+          </Col>
+          <Col borderRight borderLeft>
+            <Text size="small">GCP</Text>
+            <Text size="small">Firebase</Text>
+            <Text size="small">gRPC</Text>
+            <Text size="small">graphql</Text>
+            <Text size="small">golang</Text>
+            <Text size="small">Node.js</Text>
+            <Text size="small">TypeScript</Text>
+            <Text size="small">react</Text>
+            <Text size="small">react-native</Text>
+          </Col>
+          <Col>
+            <Text size="small">フリーランス</Text>
+          </Col>
+        </Grid>
+      </JonHistory>
     </View>
   </Page>
 )

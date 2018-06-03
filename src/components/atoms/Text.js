@@ -5,7 +5,7 @@ export default props => {
   const sizes = {
     large: 14,
     normal: 10,
-    small: 8,
+    small: 6,
   }
 
   const styles = StyleSheet.create({

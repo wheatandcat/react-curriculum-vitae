@@ -5,3 +5,5 @@ sample.pdf
 .cache
 *.pdf
 src/secret.json
+build/*.js
+build/*.js.map
