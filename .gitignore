@@ -4,3 +4,4 @@ yarn.lock
 sample.pdf
 .cache
 *.pdf
+src/secret.json
