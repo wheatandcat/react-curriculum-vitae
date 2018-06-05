@@ -1,13 +1,13 @@
-import React from "react"
-import { Page, View, StyleSheet } from "@react-pdf/core"
-import Text from "../atoms/Text"
-import Title from "../atoms/Title"
-import Link from "../atoms/Link"
-import Br from "../atoms/Br"
-import { Grid, Col } from "../atoms/Grid"
-import JonHistory from "../organisms/JonHistory/Board"
-import Period from "../molecules/JonHistory/Period"
-import secret from "../../secret.json"
+import React from "react";
+import { Page, View, StyleSheet } from "@react-pdf/core";
+import Text from "../atoms/Text";
+import Title from "../atoms/Title";
+import Link from "../atoms/Link";
+import Br from "../atoms/Br";
+import { Grid, Col } from "../atoms/Grid";
+import JonHistory from "../organisms/JonHistory/Board";
+import Period from "../molecules/JonHistory/Period";
+import secret from "../../secret.json";
 
 export default () => (
   <Page size="A4">
@@ -55,7 +55,7 @@ export default () => (
           style={{
             flex: 1,
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         >
           <Text>自己PR</Text>
@@ -109,7 +109,7 @@ export default () => (
         <Col subTitle borderLeft borderRight>
           <Text>勉強している技術</Text>
         </Col>
-        <Col size={5.3} borderRight>
+        <Col size={5.15} borderRight>
           <Text>react、react-native、go言語、graphql、GCP</Text>
         </Col>
       </Grid>
@@ -119,22 +119,21 @@ export default () => (
       <JonHistory
         items={[
           {
-            name: "期間",
+            name: "期間"
           },
           {
-            name: "職業先",
+            name: "職業先"
           },
           {
             name: "業務内容",
-            size: 3,
+            size: 3
           },
           {
-            name: "使用技術",
-            borderLeft: true,
+            name: "使用技術"
           },
           {
-            name: "契約・雇用形態",
-          },
+            name: "契約・雇用形態"
+          }
         ]}
       >
         <Grid borderTop>
@@ -145,13 +144,13 @@ export default () => (
             <Text size="small">{secret.companyNames[0]}</Text>
           </Col>
           <Col borderRight size={3}>
-            <Text size="small" style={{ fontWeight: 1200 }}>
+            <Text size="small" blod>
               【業務内容】
             </Text>
-            <View>
+            <View style={{ marginBottom: 5 }}>
               <Text size="small">・スマホアプリ / Webサービス開発</Text>
             </View>
-            <Text size="small" style={{ fontWeight: 1200 }}>
+            <Text size="small" blod>
               【業務詳細】
             </Text>
             <View>
@@ -164,7 +163,7 @@ export default () => (
               <Text size="small">・サブ作業でgolangのサーバー実装</Text>
             </View>
           </Col>
-          <Col borderRight borderLeft>
+          <Col borderRight>
             <Text size="small">GCP</Text>
             <Text size="small">Firebase</Text>
             <Text size="small">gRPC</Text>
@@ -182,25 +181,25 @@ export default () => (
       </JonHistory>
     </View>
   </Page>
-)
+);
 
 // Create styles
 const styles = StyleSheet.create({
   screen: {
-    padding: 10,
+    padding: 10
   },
   section: {
     padding: 3,
     paddingLeft: 10,
     flexGrow: 3,
     borderColor: "#aaaaaa",
-    borderWidth: 1,
+    borderWidth: 1
   },
   subTitle: {
     padding: 3,
     flexGrow: 1,
     backgroundColor: "#E4E4E4",
     borderColor: "#aaaaaa",
-    borderWidth: 1,
-  },
-})
+    borderWidth: 1
+  }
+});

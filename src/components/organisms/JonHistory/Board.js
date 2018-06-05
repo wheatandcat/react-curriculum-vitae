@@ -1,6 +1,6 @@
-import React from "react"
-import { Grid, Col } from "../../atoms/Grid"
-import Text from "../../atoms/Text"
+import React from "react";
+import { Grid, Col } from "../../atoms/Grid";
+import Text from "../../atoms/Text";
 
 export default props => (
   <Grid borderTop borderBottom>
@@ -11,7 +11,7 @@ export default props => (
         backgroundColor: "#7fbfff",
         flex: 1,
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <Text>職務履歴</Text>
@@ -33,4 +33,4 @@ export default props => (
       {props.children}
     </Col>
   </Grid>
-)
+);
