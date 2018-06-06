@@ -6,7 +6,7 @@ import Link from "../atoms/Link";
 import Br from "../atoms/Br";
 import { Grid, Col } from "../atoms/Grid";
 import JonHistory from "../organisms/JonHistory/Board";
-import Period from "../molecules/JonHistory/Period";
+import { Period, Content, Using } from "../molecules/JonHistory";
 import secret from "../../secret.json";
 
 export default () => (
@@ -37,7 +37,7 @@ export default () => (
           <Text>年齢</Text>
         </Col>
         <Col size={2} borderRight>
-          <Text>28</Text>
+          <Text>29</Text>
         </Col>
         <Col subTitle borderRight>
           <Text>性別</Text>
@@ -144,35 +144,96 @@ export default () => (
             <Text size="small">{secret.companyNames[0]}</Text>
           </Col>
           <Col borderRight size={3}>
-            <Text size="small" blod>
-              【業務内容】
-            </Text>
-            <View style={{ marginBottom: 5 }}>
-              <Text size="small">・スマホアプリ / Webサービス開発</Text>
-            </View>
-            <Text size="small" blod>
-              【業務詳細】
-            </Text>
-            <View>
-              <Text size="small">・メイン作業はアプリ、Webのフロント実装</Text>
-              <Text size="small">
-                ・アプリの自動デプロイ実装（Fabric、fastlane）
-              </Text>
-              <Text size="small">・Firebase連携実装</Text>
-              <Text size="small">・GraphQLのサーバー、フロント実装</Text>
-              <Text size="small">・サブ作業でgolangのサーバー実装</Text>
-            </View>
+            <Content
+              abouts={["スマホアプリ / Webサービス開発"]}
+              contents={[
+                "メイン作業はアプリ、Webのフロント実装",
+                "アプリの自動デプロイ実装（Fabric、fastlane）",
+                "Firebase連携実装",
+                "GraphQLのサーバー、フロント実装",
+                "サブ作業でgolangのサーバー実装（GAE）"
+              ]}
+            />
           </Col>
           <Col borderRight>
-            <Text size="small">GCP</Text>
-            <Text size="small">Firebase</Text>
-            <Text size="small">gRPC</Text>
-            <Text size="small">graphql</Text>
-            <Text size="small">golang</Text>
-            <Text size="small">Node.js</Text>
-            <Text size="small">TypeScript</Text>
-            <Text size="small">react</Text>
-            <Text size="small">react-native</Text>
+            <Using
+              uses={[
+                "GCP",
+                "Firebase",
+                "gRPC",
+                "graphql",
+                "golang",
+                "Node.js",
+                "TypeScript",
+                "react",
+                "react-native"
+              ]}
+            />
+          </Col>
+          <Col>
+            <Text size="small">フリーランス</Text>
+          </Col>
+        </Grid>
+
+        <Grid borderTop>
+          <Col borderRight>
+            <Period date="2017/04〜2017/12" period="9ヶ月" />
+          </Col>
+          <Col borderRight>
+            <Text size="small">{secret.companyNames[1]}</Text>
+          </Col>
+          <Col borderRight size={3}>
+            <Content
+              abouts={["Webサービス開発"]}
+              contents={[
+                "メイン作業はWebのフロント実装",
+                "e2eテスト、パフォーマンス計測の実装",
+                "フロント作業以外にもawsの構築のコード化をterraformで実装"
+              ]}
+            />
+          </Col>
+          <Col borderRight>
+            <Using
+              uses={["aws", "Lambda", "terraform", "java", "flow", "react"]}
+            />
+          </Col>
+          <Col>
+            <Text size="small">フリーランス</Text>
+          </Col>
+        </Grid>
+
+        <Grid borderTop>
+          <Col borderRight>
+            <Period date="2016/06〜2017/2" period="8ヶ月" />
+          </Col>
+          <Col borderRight>
+            <Text size="small">{secret.companyNames[2]}</Text>
+          </Col>
+          <Col borderRight size={3}>
+            <Content
+              abouts={["ソーシャルゲーム開発"]}
+              contents={[
+                "バックエンド実装",
+                "Socket通信の負荷改善",
+                "DBの負荷改善",
+                "キャッシュの改善",
+                "テスト改善"
+              ]}
+            />
+          </Col>
+          <Col borderRight>
+            <Using
+              uses={[
+                "PHP",
+                "Phalcon",
+                "Node.js",
+                "ansible",
+                "Chef",
+                "MySQL",
+                "Redis",
+                "Unity"
+              ]}
+            />
           </Col>
           <Col>
             <Text size="small">フリーランス</Text>

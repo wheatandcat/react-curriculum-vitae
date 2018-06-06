@@ -5,16 +5,24 @@ import Text from "../../atoms/Text";
 export default props => (
   <Fragment>
     <Text size="small" blod>
-      【年月】
+      【業務内容】
     </Text>
     <View style={{ marginBottom: 5 }}>
-      <Text size="small">・{props.date}</Text>
+      {props.abouts.map((about, index) => (
+        <Text size="small" key={index}>
+          ・{about}
+        </Text>
+      ))}
     </View>
     <Text size="small" blod>
-      【期間】
+      【業務詳細】
     </Text>
     <View>
-      <Text size="small">・{props.period}</Text>
+      {props.contents.map((content, index) => (
+        <Text size="small" key={index}>
+          ・{content}
+        </Text>
+      ))}
     </View>
   </Fragment>
 );
