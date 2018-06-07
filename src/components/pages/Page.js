@@ -1,69 +1,45 @@
 import React from "react";
 import { Page, View, StyleSheet } from "@react-pdf/core";
 import Text from "../atoms/Text";
-import Title from "../atoms/Title";
+import Title from "../molecules/Title";
 import Link from "../atoms/Link";
 import Br from "../atoms/Br";
 import { Grid, Col } from "../atoms/Grid";
-import JonHistory from "../organisms/JonHistory/Board";
+import JobHistory from "../organisms/JobHistory/Board";
 import { Period, Content, Using } from "../molecules/JonHistory";
-import secret from "../../secret.json";
+import { ListItem, PR } from "../molecules/Base";
+
+const secret =
+  process.env.ENV === "production"
+    ? require("../../secret.json")
+    : require("../../secret.develop.json");
 
 export default () => (
   <Page size="A4">
     <View style={styles.screen}>
-      <View>
-        <Text size="small" style={{ textAlign: "right" }}>
-          作成日: 2018年06月04日
-        </Text>
-        <Title>職務経歴書</Title>
-      </View>
+      <Title title="職務経歴書" createDate="作成日: 2018年06月07日" />
       <Grid borderTop>
-        <Col subTitle borderLeft borderRight>
-          <Text>名前</Text>
-        </Col>
-        <Col size={2} borderRight>
-          <Text>飯野 陽平</Text>
-        </Col>
-        <Col subTitle borderRight>
-          <Text>現住所(都道府県)</Text>
-        </Col>
-        <Col size={2} borderRight>
-          <Text>東京</Text>
-        </Col>
+        <ListItem lable="名前" borderLeft borderRight>
+          {secret.name}
+        </ListItem>
+        <ListItem lable="現住所(都道府県)" borderRight>
+          東京
+        </ListItem>
       </Grid>
       <Grid borderTop>
-        <Col subTitle borderLeft borderRight>
-          <Text>年齢</Text>
-        </Col>
-        <Col size={2} borderRight>
-          <Text>29</Text>
-        </Col>
-        <Col subTitle borderRight>
-          <Text>性別</Text>
-        </Col>
-        <Col size={2} borderRight>
-          <Text>男</Text>
-        </Col>
+        <ListItem lable="年齢" borderLeft borderRight>
+          29
+        </ListItem>
+        <ListItem lable="性別" borderRight>
+          男
+        </ListItem>
       </Grid>
 
       <Grid borderTop>
-        <Col
-          subTitle
-          borderLeft
-          borderRight
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center"
-          }}
-        >
-          <Text>自己PR</Text>
-        </Col>
-        <Col size={5} borderRight>
+        <PR>
           <View>
             <Text>
-              現在フリーランスとしてフロントエンドエンジニアをメインに活動しています。
+              現在フリーランスのエンジニアとしてフロントエンドをメインに活動しています。
             </Text>
             <Text>
               他にもバックエンド、インフラ、ネィティブアプリと幅広く業務で活動しています。
@@ -103,20 +79,18 @@ export default () => (
               </Text>
             </View>
           </View>
-        </Col>
+        </PR>
       </Grid>
+
       <Grid borderTop borderBottom>
-        <Col subTitle borderLeft borderRight>
-          <Text>勉強している技術</Text>
-        </Col>
-        <Col size={5.15} borderRight>
-          <Text>react、react-native、go言語、graphql、GCP</Text>
-        </Col>
+        <ListItem lable="勉強している技術" borderLeft borderRight size={5.15}>
+          react、react-native、go言語、graphql、GCP
+        </ListItem>
       </Grid>
       <Br />
       <Br />
       <Br />
-      <JonHistory
+      <JobHistory
         items={[
           {
             name: "期間"
@@ -151,7 +125,7 @@ export default () => (
                 "アプリの自動デプロイ実装（Fabric、fastlane）",
                 "Firebase連携実装",
                 "GraphQLのサーバー、フロント実装",
-                "サブ作業でgolangのサーバー実装（GAE）"
+                "サブ作業でgolangのバックエンド実装（GAE）"
               ]}
             />
           </Col>
@@ -188,7 +162,7 @@ export default () => (
               contents={[
                 "メイン作業はWebのフロント実装",
                 "e2eテスト、パフォーマンス計測の実装",
-                "フロント作業以外にもawsの構築のコード化をterraformで実装"
+                "サブ作業でaws構築のコード化をterraformで実装"
               ]}
             />
           </Col>
@@ -211,7 +185,7 @@ export default () => (
           </Col>
           <Col borderRight size={3}>
             <Content
-              abouts={["ソーシャルゲーム開発"]}
+              abouts={["ネイティブアプリ ソーシャルゲーム開発"]}
               contents={[
                 "バックエンド実装",
                 "Socket通信の負荷改善",
@@ -239,7 +213,49 @@ export default () => (
             <Text size="small">フリーランス</Text>
           </Col>
         </Grid>
-      </JonHistory>
+
+        <Grid borderTop>
+          <Col borderRight>
+            <Period date="2013/04〜2016/5" period="3年1ヶ月" />
+          </Col>
+          <Col borderRight>
+            <Text size="small">{secret.companyNames[3]}</Text>
+          </Col>
+          <Col borderRight size={3}>
+            <Content
+              abouts={["Webブラウザ ソーシャルゲーム開発"]}
+              contents={["バックエンド実装", "Socket通信の実装", "SPA実装"]}
+            />
+          </Col>
+          <Col borderRight>
+            <Using uses={["PHP", "Node.js", "MySQL", "Backbone.js"]} />
+          </Col>
+          <Col>
+            <Text size="small">正社員</Text>
+          </Col>
+        </Grid>
+
+        <Grid borderTop>
+          <Col borderRight>
+            <Period date="2012/04〜2013/3" period="11ヶ月" />
+          </Col>
+          <Col borderRight>
+            <Text size="small">{secret.companyNames[4]}</Text>
+          </Col>
+          <Col borderRight size={3}>
+            <Content
+              abouts={["クレジットの支払い / 管理システム開発"]}
+              contents={["バックエンド実装"]}
+            />
+          </Col>
+          <Col borderRight>
+            <Using uses={["java", "Perl", "MySQL"]} />
+          </Col>
+          <Col>
+            <Text size="small">正社員</Text>
+          </Col>
+        </Grid>
+      </JobHistory>
     </View>
   </Page>
 );
@@ -248,19 +264,5 @@ export default () => (
 const styles = StyleSheet.create({
   screen: {
     padding: 10
-  },
-  section: {
-    padding: 3,
-    paddingLeft: 10,
-    flexGrow: 3,
-    borderColor: "#aaaaaa",
-    borderWidth: 1
-  },
-  subTitle: {
-    padding: 3,
-    flexGrow: 1,
-    backgroundColor: "#E4E4E4",
-    borderColor: "#aaaaaa",
-    borderWidth: 1
   }
 });

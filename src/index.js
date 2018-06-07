@@ -32,11 +32,11 @@ const App = () => (
 );
 
 if (process.env.NODE_ENV === "production") {
-  ReactPDF.render(<MyDocument />, `${__dirname}/..//build/example.pdf`);
+  ReactPDF.render(<MyDocument />, `${__dirname}/../build/build.pdf`);
 } else {
   ReactDOM.render(
     <div>
-      <PDF file="example.pdf" fillWidth fillHeight />
+      <PDF file="build.pdf" fillWidth fillHeight />
     </div>,
     document.getElementById("root")
   );
