@@ -3,7 +3,7 @@ node_modules
 yarn.lock
 sample.pdf
 .cache
-*.pdf
+build.pdf
 src/secret.json
 build/*.js
 build/*.js.map
