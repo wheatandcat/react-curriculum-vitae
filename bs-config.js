@@ -1,17 +1,17 @@
 module.exports = {
   ui: {
-    port: 3001,
+    port: 3001
   },
-  files: "./build/*.js",
+  files: "./build/*.pdf",
   watchEvents: ["change"],
   watch: false,
   ignore: [],
   single: false,
   watchOptions: {
-    ignoreInitial: true,
+    ignoreInitial: true
   },
   server: {
-    baseDir: "build",
+    baseDir: "build"
   },
   proxy: false,
   port: 3000,
@@ -24,8 +24,8 @@ module.exports = {
     forms: {
       submit: true,
       inputs: true,
-      toggles: true,
-    },
+      toggles: true
+    }
   },
   logLevel: "info",
   logPrefix: "Browsersync",
@@ -63,21 +63,21 @@ module.exports = {
     "input:toggles",
     "form:submit",
     "form:reset",
-    "click",
+    "click"
   ],
   socket: {
     socketIoOptions: {
-      log: false,
+      log: false
     },
     socketIoClientConfig: {
-      reconnectionAttempts: 50,
+      reconnectionAttempts: 50
     },
     path: "/browser-sync/socket.io",
     clientPath: "/browser-sync",
     namespace: "/browser-sync",
     clients: {
-      heartbeatTimeout: 5000,
-    },
+      heartbeatTimeout: 5000
+    }
   },
   tagNames: {
     less: "link",
@@ -88,7 +88,7 @@ module.exports = {
     png: "img",
     svg: "img",
     gif: "img",
-    js: "script",
+    js: "script"
   },
-  injectNotification: false,
-}
+  injectNotification: false
+};

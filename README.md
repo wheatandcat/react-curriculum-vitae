@@ -11,8 +11,14 @@ Output pdf file.
 
 https://wheatandcat.github.io/react-curriculum-vitae/example/example.pdf
 
-## develop
+## init
 
+```
+npm i
+npm run build
+```
+
+## develop
 
 terminal A
 ```

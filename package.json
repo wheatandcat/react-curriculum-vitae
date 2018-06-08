@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --config bs-config.js npm run watch:pdf",
+    "start": "browser-sync start --config bs-config.js",
     "build": "run-s build:*",
     "build:pdf": "npm run pdf",
     "build:js": "webpack --mode development",
     "pdf": " NODE_ENV=production babel-node ./src/index.js",
-    "watch:pdf": "watch 'npm run build' ./src"
+    "watch:pdf": "watch 'npm run build:pdf' ./src"
   },
   "repository": {
     "type": "git",
