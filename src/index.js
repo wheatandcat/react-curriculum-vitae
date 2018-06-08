@@ -6,10 +6,6 @@ import ReactPDF from "@react-pdf/node";
 import { Document, Font } from "@react-pdf/core";
 import Page from "./components/pages/Page";
 
-Font.register(`${__dirname}/fonts/07YasashisaAntique.otf`, {
-  family: "YasashisaAntique"
-});
-
 Font.register(`${__dirname}/fonts/Nasu-Regular.ttf`, {
   family: "Nasu-Regular"
 });
