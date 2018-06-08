@@ -7,6 +7,10 @@ Output pdf file.
 ![image](./doc/demo.png)
 
 
+# DEMO
+
+https://wheatandcat.github.io/react-curriculum-vitae/example/example.pdf
+
 ## develop
 
 
